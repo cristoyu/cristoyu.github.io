@@ -1,37 +1,45 @@
-## Welcome to GitHub Pages
+---
+title: SpringBoot入门之启动逻辑
+date: 2021-11-05 17:13:39
+tags: springboot
+---
 
-You can use the [editor on GitHub](https://github.com/cristoyu/cristoyu.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 阅读说明
+> 本文基于springboot2.4.4版本进行分析，适合有springboot经验的开发人员阅读
+### springboot与传统ssm/ssh比较
 
-### Markdown
+对于使用过传统SSM/SSH开发的工程师来说一定遇到过这种痛苦:每到一个新公司开始做需求前一定花费过大量的时间来搞各种xml配置才能让项目本地启动。但是
+springboot项目却很容器搭建并运行能够快速进入开发阶段,相对于ssh/ssm来说springboot有以下有点
+- 减少了大量的配置时间并提高了生产力
+- 避免了编写大量的样板代码，注释和XML配置
+- 快速整合第三方框架，无需配置文件
+- 代码少了、配置文件少了、不需要对第三方框架烦恼了、项目精简了，对整个团队的开发及维护来说，更大的节约了成本
+- 不在强依赖web容器如tomcat,jetty
+  
+ 由于使用过于简单对于新手开发者来说也存在以下问题
+ - 开箱即用的简单背后隐藏了巨大的学习曲线，入门简单但是没有完整学习spring体系，遇到问题容易懵逼，没有一定经验根本不知道springboot自动做了什么
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### 隐藏在启动背后的逻辑-注解
 
-```markdown
-Syntax highlighted code block
+### 隐藏在启动背后的逻辑-SPI
 
-# Header 1
-## Header 2
-### Header 3
+### 隐藏在启动背后的逻辑-starter
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+``` bash
+$ hexo server
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/cristoyu/cristoyu.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### springboot作为脚手架提供哪些能力
 
-### Support or Contact
+``` bash
+$ hexo generate
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+### 总结
+
+> 以上源码均来自spring官方,欢迎交流
+
